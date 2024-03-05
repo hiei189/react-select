@@ -4,7 +4,7 @@ function _interopDefault(ex) {
   return ex && "object" == typeof ex && "default" in ex ? ex.default : ex;
 }
 
-var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), defaultProps = {
+var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), defaultProps = {
   defaultInputValue: "",
   defaultMenuIsOpen: !1,
   defaultValue: null
@@ -16,24 +16,25 @@ var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/o
       _classCallCheck(this, StateManager);
       for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
       return _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(StateManager)).call.apply(_getPrototypeOf2, [ this ].concat(args))), 
-      _defineProperty(_assertThisInitialized(_this), "select", void 0), _defineProperty(_assertThisInitialized(_this), "state", {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "select", void 0), 
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
         inputValue: void 0 !== _this.props.inputValue ? _this.props.inputValue : _this.props.defaultInputValue,
         menuIsOpen: void 0 !== _this.props.menuIsOpen ? _this.props.menuIsOpen : _this.props.defaultMenuIsOpen,
         value: void 0 !== _this.props.value ? _this.props.value : _this.props.defaultValue
-      }), _defineProperty(_assertThisInitialized(_this), "onChange", function(value, actionMeta) {
+      }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function(value, actionMeta) {
         _this.callProp("onChange", value, actionMeta), _this.setState({
           value: value
         });
-      }), _defineProperty(_assertThisInitialized(_this), "onInputChange", function(value, actionMeta) {
+      }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputChange", function(value, actionMeta) {
         var newValue = _this.callProp("onInputChange", value, actionMeta);
         _this.setState({
           inputValue: void 0 !== newValue ? newValue : value
         });
-      }), _defineProperty(_assertThisInitialized(_this), "onMenuOpen", function() {
+      }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuOpen", function() {
         _this.callProp("onMenuOpen"), _this.setState({
           menuIsOpen: !0
         });
-      }), _defineProperty(_assertThisInitialized(_this), "onMenuClose", function() {
+      }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuClose", function() {
         _this.callProp("onMenuClose"), _this.setState({
           menuIsOpen: !1
         });

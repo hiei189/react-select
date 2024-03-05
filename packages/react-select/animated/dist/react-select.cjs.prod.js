@@ -8,12 +8,12 @@ Object.defineProperty(exports, "__esModule", {
   value: !0
 });
 
-var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), memoizeOne = _interopDefault(require("memoize-one"));
+var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), memoizeOne = _interopDefault(require("memoize-one"));
 
 require("@emotion/core"), require("react-dom"), require("prop-types"), require("@babel/runtime/helpers/typeof"), 
 require("raf"), require("../../dist/chunk-c9662232.cjs.prod.js");
 
-var __chunk_2 = require("../../dist/chunk-1c9d6d4d.cjs.prod.js");
+var __chunk_2 = require("../../dist/chunk-4c778abc.cjs.prod.js");
 
 require("@emotion/css"), require("@babel/runtime/helpers/taggedTemplateLiteral"), 
 require("react-input-autosize");
@@ -60,10 +60,11 @@ var reactTransitionGroup = require("react-transition-group"), AnimatedInput = fu
     _classCallCheck(this, Collapse);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
     return _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Collapse)).call.apply(_getPrototypeOf2, [ this ].concat(args))), 
-    _defineProperty(_assertThisInitialized(_this), "duration", collapseDuration), _defineProperty(_assertThisInitialized(_this), "rafID", void 0), 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "duration", collapseDuration), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "rafID", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       width: "auto"
-    }), _defineProperty(_assertThisInitialized(_this), "transition", {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "transition", {
       exiting: {
         width: 0,
         transition: "width ".concat(_this.duration, "ms ease-out")
@@ -71,20 +72,20 @@ var reactTransitionGroup = require("react-transition-group"), AnimatedInput = fu
       exited: {
         width: 0
       }
-    }), _defineProperty(_assertThisInitialized(_this), "getWidth", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getWidth", function(ref) {
       ref && isNaN(_this.state.width) && (_this.rafID = window.requestAnimationFrame(function() {
         var width = ref.getBoundingClientRect().width;
         _this.setState({
           width: width
         });
       }));
-    }), _defineProperty(_assertThisInitialized(_this), "getStyle", function(width) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getStyle", function(width) {
       return {
         overflow: "hidden",
         whiteSpace: "nowrap",
         width: width
       };
-    }), _defineProperty(_assertThisInitialized(_this), "getTransition", function(state) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getTransition", function(state) {
       return _this.transition[state];
     }), _this;
   }

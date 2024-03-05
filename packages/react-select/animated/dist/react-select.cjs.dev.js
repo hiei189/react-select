@@ -22,9 +22,9 @@ var _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers
 
 var _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits = _interopDefault(require("@babel/runtime/helpers/inherits"));
+
+var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
 var _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty"));
 
@@ -46,7 +46,7 @@ require('raf');
 
 require('../../dist/chunk-c9662232.cjs.dev.js');
 
-var __chunk_2 = require('../../dist/chunk-50137db3.cjs.dev.js');
+var __chunk_2 = require('../../dist/chunk-9e023caa.cjs.dev.js');
 
 require('@emotion/css');
 
@@ -133,15 +133,15 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Collapse)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "duration", collapseDuration);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "duration", collapseDuration);
 
-    _defineProperty(_assertThisInitialized(_this), "rafID", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "rafID", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       width: 'auto'
     });
 
-    _defineProperty(_assertThisInitialized(_this), "transition", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "transition", {
       exiting: {
         width: 0,
         transition: "width ".concat(_this.duration, "ms ease-out")
@@ -151,7 +151,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getWidth", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getWidth", function (ref) {
       if (ref && isNaN(_this.state.width)) {
         /*
           Here we're invoking requestAnimationFrame with a callback invoking our
@@ -172,7 +172,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getStyle", function (width) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getStyle", function (width) {
       return {
         overflow: 'hidden',
         whiteSpace: 'nowrap',
@@ -180,7 +180,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getTransition", function (state) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getTransition", function (state) {
       return _this.transition[state];
     });
 

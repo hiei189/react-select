@@ -1,21 +1,46 @@
-import _objectWithoutProperties from '@babel/runtime/helpers/esm/objectWithoutProperties';
-import _extends from '@babel/runtime/helpers/esm/extends';
-import _toConsumableArray from '@babel/runtime/helpers/esm/toConsumableArray';
-import _objectSpread from '@babel/runtime/helpers/esm/objectSpread';
-import _classCallCheck from '@babel/runtime/helpers/esm/classCallCheck';
-import _createClass from '@babel/runtime/helpers/esm/createClass';
-import _possibleConstructorReturn from '@babel/runtime/helpers/esm/possibleConstructorReturn';
-import _getPrototypeOf from '@babel/runtime/helpers/esm/getPrototypeOf';
-import _assertThisInitialized from '@babel/runtime/helpers/esm/assertThisInitialized';
-import _inherits from '@babel/runtime/helpers/esm/inherits';
-import _defineProperty from '@babel/runtime/helpers/esm/defineProperty';
-import React, { Component, PureComponent } from 'react';
-import memoizeOne from 'memoize-one';
-import { jsx } from '@emotion/core';
-import { findDOMNode } from 'react-dom';
-import { i as isTouchCapable, d as isMobileDevice, e as isDocumentElement, f as cleanValue, h as scrollIntoView, j as classNames, n as noop } from '../../chunk-e8ae4b0f.esm.js';
-import { c as clearIndicatorCSS, a as containerCSS, b as css, d as dropdownIndicatorCSS, g as groupCSS, e as groupHeadingCSS, i as indicatorsContainerCSS, f as indicatorSeparatorCSS, h as inputCSS, l as loadingIndicatorCSS, j as loadingMessageCSS, m as menuCSS, k as menuListCSS, n as menuPortalCSS, o as multiValueCSS, p as multiValueLabelCSS, q as multiValueRemoveCSS, r as noOptionsMessageCSS, s as optionCSS, t as placeholderCSS, u as css$1, v as valueContainerCSS, w as defaultComponents, x as exportedEqual, M as MenuPlacer } from '../../chunk-f0851c13.esm.js';
-import _css from '@emotion/css';
+'use strict';
+
+function _interopDefault(ex) {
+  return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
+}
+
+var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+
+var _extends = _interopDefault(require("@babel/runtime/helpers/extends"));
+
+var _toConsumableArray = _interopDefault(require("@babel/runtime/helpers/toConsumableArray"));
+
+var _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread"));
+
+var _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass = _interopDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _inherits = _interopDefault(require("@babel/runtime/helpers/inherits"));
+
+var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+
+var _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var React = require('react');
+
+var React__default = _interopDefault(React);
+
+var memoizeOne = _interopDefault(require('memoize-one'));
+
+var core = require('@emotion/core');
+
+var reactDom = require('react-dom');
+
+var __chunk_1 = require('../../chunk-c9662232.browser.cjs.js');
+
+var __chunk_2 = require('../../chunk-9e023caa.browser.cjs.js');
+
+var _css = _interopDefault(require('@emotion/css'));
 
 var diacritics = [{
   base: 'A',
@@ -270,6 +295,7 @@ var diacritics = [{
   base: 'z',
   letters: /[\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763]/g
 }];
+
 var stripDiacritics = function stripDiacritics(str) {
   for (var i = 0; i < diacritics.length; i++) {
     str = str.replace(diacritics[i].letters, diacritics[i].base);
@@ -328,7 +354,7 @@ var _ref = process.env.NODE_ENV === "production" ? {
 };
 
 var A11yText = function A11yText(props) {
-  return jsx("span", _extends({
+  return core.jsx("span", _extends({
     css: _ref
   }, props));
 };
@@ -358,7 +384,7 @@ function (_Component) {
           emotion = _this$props.emotion,
           props = _objectWithoutProperties(_this$props, ["in", "out", "onExited", "appear", "enter", "exit", "innerRef", "emotion"]);
 
-      return jsx("input", _extends({
+      return core.jsx("input", _extends({
         ref: innerRef
       }, props, {
         css:
@@ -386,7 +412,7 @@ function (_Component) {
   }]);
 
   return DummyInput;
-}(Component);
+}(React.Component);
 
 var NodeResolver =
 /*#__PURE__*/
@@ -402,7 +428,7 @@ function (_Component) {
   _createClass(NodeResolver, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.innerRef(findDOMNode(this));
+      this.props.innerRef(reactDom.findDOMNode(this));
     }
   }, {
     key: "componentWillUnmount",
@@ -417,7 +443,7 @@ function (_Component) {
   }]);
 
   return NodeResolver;
-}(Component);
+}(React.Component);
 
 var STYLE_KEYS = ['boxSizing', 'height', 'overflow', 'paddingRight', 'position'];
 var LOCK_STYLES = {
@@ -431,9 +457,11 @@ var LOCK_STYLES = {
 function preventTouchMove(e) {
   e.preventDefault();
 }
+
 function allowTouchMove(e) {
   e.stopPropagation();
 }
+
 function preventInertiaScroll() {
   var top = this.scrollTop;
   var totalScroll = this.scrollHeight;
@@ -447,11 +475,12 @@ function preventInertiaScroll() {
 } // `ontouchstart` check works on most browsers
 // `maxTouchPoints` works on IE10/11 and Surface
 
+
 function isTouchDevice() {
   return 'ontouchstart' in window || navigator.maxTouchPoints;
 }
 
-var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+var canUseDOM = !!(window.document && window.document.createElement);
 var activeScrollLocks = 0;
 
 var ScrollLock =
@@ -472,9 +501,9 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollLock)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "originalStyles", {});
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "originalStyles", {});
 
-    _defineProperty(_assertThisInitialized(_this), "listenerOptions", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "listenerOptions", {
       capture: false,
       passive: false
     });
@@ -576,7 +605,7 @@ function (_Component) {
   }]);
 
   return ScrollLock;
-}(Component);
+}(React.Component);
 
 _defineProperty(ScrollLock, "defaultProps", {
   accountForScrollbars: true
@@ -589,12 +618,12 @@ var _ref$1 = process.env.NODE_ENV === "production" ? {
   name: "1dsbpcp",
   styles: "position:fixed;left:0;bottom:0;right:0;top:0;",
   map: "/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlNjcm9sbEJsb2NrLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQTZEVSIsImZpbGUiOiJTY3JvbGxCbG9jay5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIEBmbG93XG4vKiogQGpzeCBqc3ggKi9cbmltcG9ydCB7IFB1cmVDb21wb25lbnQsIHR5cGUgRWxlbWVudCB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IGpzeCB9IGZyb20gJ0BlbW90aW9uL2NvcmUnO1xuaW1wb3J0IE5vZGVSZXNvbHZlciBmcm9tICcuL05vZGVSZXNvbHZlcic7XG5pbXBvcnQgU2Nyb2xsTG9jayBmcm9tICcuL1Njcm9sbExvY2svaW5kZXgnO1xuXG50eXBlIFByb3BzID0ge1xuICBjaGlsZHJlbjogRWxlbWVudDwqPixcbiAgaXNFbmFibGVkOiBib29sZWFuLFxufTtcbnR5cGUgU3RhdGUgPSB7XG4gIHRvdWNoU2Nyb2xsVGFyZ2V0OiBIVE1MRWxlbWVudCB8IG51bGwsXG59O1xuXG4vLyBOT1RFOlxuLy8gV2Ugc2hvdWxkbid0IG5lZWQgdGhpcyBhZnRlciB1cGRhdGluZyB0byBSZWFjdCB2MTYuMy4wLCB3aGljaCBpbnRyb2R1Y2VzOlxuLy8gLSBjcmVhdGVSZWYoKSBodHRwczovL3JlYWN0anMub3JnL2RvY3MvcmVhY3QtYXBpLmh0bWwjcmVhY3RjcmVhdGVyZWZcbi8vIC0gZm9yd2FyZFJlZigpIGh0dHBzOi8vcmVhY3Rqcy5vcmcvZG9jcy9yZWFjdC1hcGkuaHRtbCNyZWFjdGZvcndhcmRyZWZcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgU2Nyb2xsQmxvY2sgZXh0ZW5kcyBQdXJlQ29tcG9uZW50PFByb3BzLCBTdGF0ZT4ge1xuICBzdGF0ZSA9IHsgdG91Y2hTY3JvbGxUYXJnZXQ6IG51bGwgfTtcblxuICAvLyBtdXN0IGJlIGluIHN0YXRlIHRvIHRyaWdnZXIgYSByZS1yZW5kZXIsIG9ubHkgcnVucyBvbmNlIHBlciBpbnN0YW5jZVxuICBnZXRTY3JvbGxUYXJnZXQgPSAocmVmOiBIVE1MRWxlbWVudCkgPT4ge1xuICAgIGlmIChyZWYgPT09IHRoaXMuc3RhdGUudG91Y2hTY3JvbGxUYXJnZXQpIHJldHVybjtcbiAgICB0aGlzLnNldFN0YXRlKHsgdG91Y2hTY3JvbGxUYXJnZXQ6IHJlZiB9KTtcbiAgfTtcblxuICAvLyB0aGlzIHdpbGwgY2xvc2UgdGhlIG1lbnUgd2hlbiBhIHVzZXIgY2xpY2tzIG91dHNpZGVcbiAgYmx1clNlbGVjdElucHV0ID0gKCkgPT4ge1xuICAgIGlmIChkb2N1bWVudC5hY3RpdmVFbGVtZW50KSB7XG4gICAgICBkb2N1bWVudC5hY3RpdmVFbGVtZW50LmJsdXIoKTtcbiAgICB9XG4gIH07XG5cbiAgcmVuZGVyKCkge1xuICAgIGNvbnN0IHsgY2hpbGRyZW4sIGlzRW5hYmxlZCB9ID0gdGhpcy5wcm9wcztcbiAgICBjb25zdCB7IHRvdWNoU2Nyb2xsVGFyZ2V0IH0gPSB0aGlzLnN0YXRlO1xuXG4gICAgLy8gYmFpbCBlYXJseSBpZiBub3QgZW5hYmxlZFxuICAgIGlmICghaXNFbmFibGVkKSByZXR1cm4gY2hpbGRyZW47XG5cbiAgICAvKlxuICAgICAqIERpdlxuICAgICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuICAgICAqIGJsb2NrcyBzY3JvbGxpbmcgb24gbm9uLWJvZHkgZWxlbWVudHMgYmVoaW5kIHRoZSBtZW51XG5cbiAgICAgKiBOb2RlUmVzb2x2ZXJcbiAgICAgKiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbiAgICAgKiB3ZSBuZWVkIGEgcmVmZXJlbmNlIHRvIHRoZSBzY3JvbGxhYmxlIGVsZW1lbnQgdG8gXCJ1bmxvY2tcIiBzY3JvbGwgb25cbiAgICAgKiBtb2JpbGUgZGV2aWNlc1xuXG4gICAgICogU2Nyb2xsTG9ja1xuICAgICAqIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLVxuICAgICAqIGFjdHVhbGx5IGRvZXMgdGhlIHNjcm9sbCBsb2NraW5nXG4gICAgICovXG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXY+XG4gICAgICAgIDxkaXZcbiAgICAgICAgICBvbkNsaWNrPXt0aGlzLmJsdXJTZWxlY3RJbnB1dH1cbiAgICAgICAgICBjc3M9e3sgcG9zaXRpb246ICdmaXhlZCcsIGxlZnQ6IDAsIGJvdHRvbTogMCwgcmlnaHQ6IDAsIHRvcDogMCB9fVxuICAgICAgICAvPlxuICAgICAgICA8Tm9kZVJlc29sdmVyIGlubmVyUmVmPXt0aGlzLmdldFNjcm9sbFRhcmdldH0+e2NoaWxkcmVufTwvTm9kZVJlc29sdmVyPlxuICAgICAgICB7dG91Y2hTY3JvbGxUYXJnZXQgPyAoXG4gICAgICAgICAgPFNjcm9sbExvY2sgdG91Y2hTY3JvbGxUYXJnZXQ9e3RvdWNoU2Nyb2xsVGFyZ2V0fSAvPlxuICAgICAgICApIDogbnVsbH1cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn1cbiJdfQ== */"
-};
-
-// NOTE:
+}; // NOTE:
 // We shouldn't need this after updating to React v16.3.0, which introduces:
 // - createRef() https://reactjs.org/docs/react-api.html#reactcreateref
 // - forwardRef() https://reactjs.org/docs/react-api.html#reactforwardref
+
+
 var ScrollBlock =
 /*#__PURE__*/
 function (_PureComponent) {
@@ -613,11 +642,11 @@ function (_PureComponent) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollBlock)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       touchScrollTarget: null
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getScrollTarget", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getScrollTarget", function (ref) {
       if (ref === _this.state.touchScrollTarget) return;
 
       _this.setState({
@@ -625,7 +654,7 @@ function (_PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "blurSelectInput", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blurSelectInput", function () {
       if (document.activeElement) {
         document.activeElement.blur();
       }
@@ -656,19 +685,19 @@ function (_PureComponent) {
        * actually does the scroll locking
        */
 
-      return jsx("div", null, jsx("div", {
+      return core.jsx("div", null, core.jsx("div", {
         onClick: this.blurSelectInput,
         css: _ref$1
-      }), jsx(NodeResolver, {
+      }), core.jsx(NodeResolver, {
         innerRef: this.getScrollTarget
-      }, children), touchScrollTarget ? jsx(ScrollLock, {
+      }, children), touchScrollTarget ? core.jsx(ScrollLock, {
         touchScrollTarget: touchScrollTarget
       }) : null);
     }
   }]);
 
   return ScrollBlock;
-}(PureComponent);
+}(React.PureComponent);
 
 var ScrollCaptor =
 /*#__PURE__*/
@@ -688,20 +717,20 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollCaptor)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "isBottom", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isBottom", false);
 
-    _defineProperty(_assertThisInitialized(_this), "isTop", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isTop", false);
 
-    _defineProperty(_assertThisInitialized(_this), "scrollTarget", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollTarget", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "touchStart", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "touchStart", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "cancelScroll", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cancelScroll", function (event) {
       event.preventDefault();
       event.stopPropagation();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleEventDelta", function (event, delta) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleEventDelta", function (event, delta) {
       var _this$props = _this.props,
           onBottomArrive = _this$props.onBottomArrive,
           onBottomLeave = _this$props.onBottomLeave,
@@ -751,22 +780,22 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onWheel", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onWheel", function (event) {
       _this.handleEventDelta(event, event.deltaY);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchStart", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchStart", function (event) {
       // set touch start so we can calculate touchmove delta
       _this.touchStart = event.changedTouches[0].clientY;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchMove", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchMove", function (event) {
       var deltaY = _this.touchStart - event.changedTouches[0].clientY;
 
       _this.handleEventDelta(event, deltaY);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getScrollTarget", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getScrollTarget", function (ref) {
       _this.scrollTarget = ref;
     });
 
@@ -823,14 +852,14 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return React.createElement(NodeResolver, {
+      return React__default.createElement(NodeResolver, {
         innerRef: this.getScrollTarget
       }, this.props.children);
     }
   }]);
 
   return ScrollCaptor;
-}(Component);
+}(React.Component);
 
 var ScrollCaptorSwitch =
 /*#__PURE__*/
@@ -850,12 +879,12 @@ function (_Component2) {
           isEnabled = _this$props2.isEnabled,
           props = _objectWithoutProperties(_this$props2, ["isEnabled"]);
 
-      return isEnabled ? React.createElement(ScrollCaptor, props) : this.props.children;
+      return isEnabled ? React__default.createElement(ScrollCaptor, props) : this.props.children;
     }
   }]);
 
   return ScrollCaptorSwitch;
-}(Component);
+}(React.Component);
 
 _defineProperty(ScrollCaptorSwitch, "defaultProps", {
   isEnabled: true
@@ -879,6 +908,7 @@ var instructionsAriaMessage = function instructionsAriaMessage(event) {
       return 'Utiliza flecha izquierda y flecha derecha para alternar entre opciones en foco, presiona tecla regresar para remover la opción que se encuentra actualmente en foco';
   }
 };
+
 var valueEventAriaMessage = function valueEventAriaMessage(event, context) {
   var value = context.value,
       isDisabled = context.isDisabled;
@@ -894,18 +924,21 @@ var valueEventAriaMessage = function valueEventAriaMessage(event, context) {
       return isDisabled ? "Opci\xF3n ".concat(value, " est\xE1 deshabilitada. Selecciona otra opci\xF3n.") : "Opci\xF3n ".concat(value, ", seleccionada.");
   }
 };
+
 var valueFocusAriaMessage = function valueFocusAriaMessage(_ref) {
   var focusedValue = _ref.focusedValue,
       getOptionLabel = _ref.getOptionLabel,
       selectValue = _ref.selectValue;
   return "Opci\xF3n ".concat(getOptionLabel(focusedValue), " ahora en foco, ").concat(selectValue.indexOf(focusedValue) + 1, " de ").concat(selectValue.length, ".");
 };
+
 var optionFocusAriaMessage = function optionFocusAriaMessage(_ref2) {
   var focusedOption = _ref2.focusedOption,
       getOptionLabel = _ref2.getOptionLabel,
       options = _ref2.options;
   return "Opci\xF3n ".concat(getOptionLabel(focusedOption), " ahora en foco").concat(focusedOption.isDisabled ? ' deshabilitada' : '', ", ").concat(options.indexOf(focusedOption) + 1, " de ").concat(options.length, ".");
 };
+
 var resultsAriaMessage = function resultsAriaMessage(_ref3) {
   var inputValue = _ref3.inputValue,
       screenReaderMessage = _ref3.screenReaderMessage;
@@ -915,46 +948,48 @@ var resultsAriaMessage = function resultsAriaMessage(_ref3) {
 var formatGroupLabel = function formatGroupLabel(group) {
   return group.label;
 };
+
 var getOptionLabel = function getOptionLabel(option) {
   return option.label;
 };
+
 var getOptionValue = function getOptionValue(option) {
   return option.value;
 };
+
 var isOptionDisabled = function isOptionDisabled(option) {
   return !!option.isDisabled;
 };
 
 var defaultStyles = {
-  clearIndicator: clearIndicatorCSS,
-  container: containerCSS,
-  control: css,
-  dropdownIndicator: dropdownIndicatorCSS,
-  group: groupCSS,
-  groupHeading: groupHeadingCSS,
-  indicatorsContainer: indicatorsContainerCSS,
-  indicatorSeparator: indicatorSeparatorCSS,
-  input: inputCSS,
-  loadingIndicator: loadingIndicatorCSS,
-  loadingMessage: loadingMessageCSS,
-  menu: menuCSS,
-  menuList: menuListCSS,
-  menuPortal: menuPortalCSS,
-  multiValue: multiValueCSS,
-  multiValueLabel: multiValueLabelCSS,
-  multiValueRemove: multiValueRemoveCSS,
-  noOptionsMessage: noOptionsMessageCSS,
-  option: optionCSS,
-  placeholder: placeholderCSS,
-  singleValue: css$1,
-  valueContainer: valueContainerCSS
+  clearIndicator: __chunk_2.clearIndicatorCSS,
+  container: __chunk_2.containerCSS,
+  control: __chunk_2.css,
+  dropdownIndicator: __chunk_2.dropdownIndicatorCSS,
+  group: __chunk_2.groupCSS,
+  groupHeading: __chunk_2.groupHeadingCSS,
+  indicatorsContainer: __chunk_2.indicatorsContainerCSS,
+  indicatorSeparator: __chunk_2.indicatorSeparatorCSS,
+  input: __chunk_2.inputCSS,
+  loadingIndicator: __chunk_2.loadingIndicatorCSS,
+  loadingMessage: __chunk_2.loadingMessageCSS,
+  menu: __chunk_2.menuCSS,
+  menuList: __chunk_2.menuListCSS,
+  menuPortal: __chunk_2.menuPortalCSS,
+  multiValue: __chunk_2.multiValueCSS,
+  multiValueLabel: __chunk_2.multiValueLabelCSS,
+  multiValueRemove: __chunk_2.multiValueRemoveCSS,
+  noOptionsMessage: __chunk_2.noOptionsMessageCSS,
+  option: __chunk_2.optionCSS,
+  placeholder: __chunk_2.placeholderCSS,
+  singleValue: __chunk_2.css$1,
+  valueContainer: __chunk_2.valueContainerCSS
 }; // Merge Utility
 // Allows consumers to extend a base Select with additional styles
 
 function mergeStyles(source) {
-  var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {}; // initialize with source styles
 
-  // initialize with source styles
   var styles = _objectSpread({}, source); // massage in target styles
 
 
@@ -1006,11 +1041,10 @@ var defaultTheme = {
   colors: colors,
   spacing: spacing
 };
-
 var defaultProps = {
   backspaceRemovesValue: true,
-  blurInputOnSelect: isTouchCapable(),
-  captureMenuScroll: !isTouchCapable(),
+  blurInputOnSelect: __chunk_1.isTouchCapable(),
+  captureMenuScroll: !__chunk_1.isTouchCapable(),
   closeMenuOnSelect: true,
   closeMenuOnScroll: false,
   components: {},
@@ -1035,7 +1069,7 @@ var defaultProps = {
   menuPlacement: 'bottom',
   menuPosition: 'absolute',
   menuShouldBlockScroll: false,
-  menuShouldScrollIntoView: !isMobileDevice(),
+  menuShouldScrollIntoView: !__chunk_1.isMobileDevice(),
   noOptionsMessage: function noOptionsMessage() {
     return 'No options';
   },
@@ -1057,15 +1091,15 @@ var instanceId = 1;
 var Select =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Select, _Component);
-
-  // Misc. Instance Properties
+  _inherits(Select, _Component); // Misc. Instance Properties
   // ------------------------------
   // TODO
   // Refs
   // ------------------------------
   // Lifecycle
   // ------------------------------
+
+
   function Select(_props) {
     var _this;
 
@@ -1073,7 +1107,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Select).call(this, _props));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       ariaLiveSelection: '',
       ariaLiveContext: '',
       focusedOption: null,
@@ -1087,67 +1121,67 @@ function (_Component) {
       selectValue: []
     });
 
-    _defineProperty(_assertThisInitialized(_this), "blockOptionHover", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blockOptionHover", false);
 
-    _defineProperty(_assertThisInitialized(_this), "isComposing", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isComposing", false);
 
-    _defineProperty(_assertThisInitialized(_this), "clearFocusValueOnUpdate", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearFocusValueOnUpdate", false);
 
-    _defineProperty(_assertThisInitialized(_this), "commonProps", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "commonProps", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "components", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "components", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "hasGroups", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "hasGroups", false);
 
-    _defineProperty(_assertThisInitialized(_this), "initialTouchX", 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialTouchX", 0);
 
-    _defineProperty(_assertThisInitialized(_this), "initialTouchY", 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialTouchY", 0);
 
-    _defineProperty(_assertThisInitialized(_this), "inputIsHiddenAfterUpdate", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputIsHiddenAfterUpdate", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "instancePrefix", '');
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "instancePrefix", '');
 
-    _defineProperty(_assertThisInitialized(_this), "openAfterFocus", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "openAfterFocus", false);
 
-    _defineProperty(_assertThisInitialized(_this), "scrollToFocusedOptionOnUpdate", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollToFocusedOptionOnUpdate", false);
 
-    _defineProperty(_assertThisInitialized(_this), "userIsDragging", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "userIsDragging", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "controlRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "controlRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getControlRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getControlRef", function (ref) {
       _this.controlRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "focusedOptionRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "focusedOptionRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getFocusedOptionRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getFocusedOptionRef", function (ref) {
       _this.focusedOptionRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "menuListRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "menuListRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getMenuListRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getMenuListRef", function (ref) {
       _this.menuListRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "inputRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getInputRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getInputRef", function (ref) {
       _this.inputRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "cacheComponents", function (components) {
-      _this.components = defaultComponents({
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cacheComponents", function (components) {
+      _this.components = __chunk_2.defaultComponents({
         components: components
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "focus", _this.focusInput);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "focus", _this.focusInput);
 
-    _defineProperty(_assertThisInitialized(_this), "blur", _this.blurInput);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blur", _this.blurInput);
 
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (newValue, actionMeta) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (newValue, actionMeta) {
       var _this$props = _this.props,
           onChange = _this$props.onChange,
           name = _this$props.name;
@@ -1156,7 +1190,7 @@ function (_Component) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "setValue", function (newValue) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setValue", function (newValue) {
       var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'set-value';
       var option = arguments.length > 2 ? arguments[2] : undefined;
       var _this$props2 = _this.props,
@@ -1182,7 +1216,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectOption", function (newValue) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function (newValue) {
       var _this$props3 = _this.props,
           blurInputOnSelect = _this$props3.blurInputOnSelect,
           isMulti = _this$props3.isMulti;
@@ -1250,7 +1284,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "removeValue", function (removedValue) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeValue", function (removedValue) {
       var selectValue = _this.state.selectValue;
 
       var candidate = _this.getOptionValue(removedValue);
@@ -1274,7 +1308,7 @@ function (_Component) {
       _this.focusInput();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "clearValue", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearValue", function () {
       var isMulti = _this.props.isMulti;
 
       _this.onChange(isMulti ? [] : null, {
@@ -1282,7 +1316,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "popValue", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "popValue", function () {
       var selectValue = _this.state.selectValue;
       var lastSelectedValue = selectValue[selectValue.length - 1];
       var newValue = selectValue.slice(0, selectValue.length - 1);
@@ -1300,26 +1334,26 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getOptionLabel", function (data) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getOptionLabel", function (data) {
       return _this.props.getOptionLabel(data);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getOptionValue", function (data) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getOptionValue", function (data) {
       return _this.props.getOptionValue(data);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getStyles", function (key, props) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getStyles", function (key, props) {
       var base = defaultStyles[key](props);
       base.boxSizing = 'border-box';
       var custom = _this.props.styles[key];
       return custom ? custom(base, props) : base;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getElementId", function (element) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getElementId", function (element) {
       return "".concat(_this.instancePrefix, "-").concat(element);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getActiveDescendentId", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getActiveDescendentId", function () {
       var menuIsOpen = _this.props.menuIsOpen;
       var _this$state = _this.state,
           menuOptions = _this$state.menuOptions,
@@ -1330,7 +1364,7 @@ function (_Component) {
       return option && option.key;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "announceAriaLiveSelection", function (_ref2) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceAriaLiveSelection", function (_ref2) {
       var event = _ref2.event,
           context = _ref2.context;
 
@@ -1339,7 +1373,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "announceAriaLiveContext", function (_ref3) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceAriaLiveContext", function (_ref3) {
       var event = _ref3.event,
           context = _ref3.context;
 
@@ -1350,7 +1384,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onMenuMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuMouseDown", function (event) {
       if (event.button !== 0) {
         return;
       }
@@ -1361,11 +1395,11 @@ function (_Component) {
       _this.focusInput();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onMenuMouseMove", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuMouseMove", function (event) {
       _this.blockOptionHover = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onControlMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onControlMouseDown", function (event) {
       var openMenuOnClick = _this.props.openMenuOnClick;
 
       if (!_this.state.isFocused) {
@@ -1391,7 +1425,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDropdownIndicatorMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropdownIndicatorMouseDown", function (event) {
       // ignore mouse events that weren't triggered by the primary button
       if (event && event.type === 'mousedown' && event.button !== 0) {
         return;
@@ -1416,7 +1450,7 @@ function (_Component) {
       event.stopPropagation();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onClearIndicatorMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClearIndicatorMouseDown", function (event) {
       // ignore mouse events that weren't triggered by the primary button
       if (event && event.type === 'mousedown' && event.button !== 0) {
         return;
@@ -1436,9 +1470,9 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onScroll", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScroll", function (event) {
       if (typeof _this.props.closeMenuOnScroll === 'boolean') {
-        if (event.target instanceof HTMLElement && isDocumentElement(event.target)) {
+        if (event.target instanceof HTMLElement && __chunk_1.isDocumentElement(event.target)) {
           _this.props.onMenuClose();
         }
       } else if (typeof _this.props.closeMenuOnScroll === 'function') {
@@ -1448,15 +1482,15 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompositionStart", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onCompositionStart", function () {
       _this.isComposing = true;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompositionEnd", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onCompositionEnd", function () {
       _this.isComposing = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchStart", function (_ref4) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchStart", function (_ref4) {
       var touches = _ref4.touches;
       var touch = touches.item(0);
 
@@ -1469,7 +1503,7 @@ function (_Component) {
       _this.userIsDragging = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchMove", function (_ref5) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchMove", function (_ref5) {
       var touches = _ref5.touches;
       var touch = touches.item(0);
 
@@ -1483,7 +1517,7 @@ function (_Component) {
       _this.userIsDragging = deltaX > moveThreshold || deltaY > moveThreshold;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchEnd", function (event) {
       if (_this.userIsDragging) return; // close the menu if the user taps outside
       // we're checking on event.target here instead of event.currentTarget, because we want to assert information
       // on events on child elements, not the document (which we've attached this handler to).
@@ -1497,25 +1531,25 @@ function (_Component) {
       _this.initialTouchY = 0;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onControlTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onControlTouchEnd", function (event) {
       if (_this.userIsDragging) return;
 
       _this.onControlMouseDown(event);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onClearIndicatorTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClearIndicatorTouchEnd", function (event) {
       if (_this.userIsDragging) return;
 
       _this.onClearIndicatorMouseDown(event);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDropdownIndicatorTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropdownIndicatorTouchEnd", function (event) {
       if (_this.userIsDragging) return;
 
       _this.onDropdownIndicatorMouseDown(event);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleInputChange", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleInputChange", function (event) {
       var inputValue = event.currentTarget.value;
       _this.inputIsHiddenAfterUpdate = false;
 
@@ -1526,7 +1560,7 @@ function (_Component) {
       _this.onMenuOpen();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onInputFocus", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputFocus", function (event) {
       var _this$props5 = _this.props,
           isSearchable = _this$props5.isSearchable,
           isMulti = _this$props5.isMulti;
@@ -1556,7 +1590,7 @@ function (_Component) {
       _this.openAfterFocus = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onInputBlur", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputBlur", function (event) {
       if (_this.menuListRef && _this.menuListRef.contains(document.activeElement)) {
         _this.inputRef.focus();
 
@@ -1579,7 +1613,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onOptionHover", function (focusedOption) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOptionHover", function (focusedOption) {
       if (_this.blockOptionHover || _this.state.focusedOption === focusedOption) {
         return;
       }
@@ -1589,7 +1623,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "shouldHideSelectedOptions", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "shouldHideSelectedOptions", function () {
       var _this$props6 = _this.props,
           hideSelectedOptions = _this$props6.hideSelectedOptions,
           isMulti = _this$props6.isMulti;
@@ -1597,7 +1631,7 @@ function (_Component) {
       return hideSelectedOptions;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onKeyDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onKeyDown", function (event) {
       var _this$props7 = _this.props,
           isMulti = _this$props7.isMulti,
           backspaceRemovesValue = _this$props7.backspaceRemovesValue,
@@ -1777,13 +1811,13 @@ function (_Component) {
     });
 
     var value = _props.value;
-    _this.cacheComponents = memoizeOne(_this.cacheComponents, exportedEqual).bind(_assertThisInitialized(_this));
+    _this.cacheComponents = memoizeOne(_this.cacheComponents, __chunk_2.exportedEqual).bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
     _this.cacheComponents(_props.components);
 
     _this.instancePrefix = 'react-select-' + (_this.props.instanceId || ++instanceId);
 
-    var _selectValue = cleanValue(value);
+    var _selectValue = __chunk_1.cleanValue(value);
 
     var _menuOptions = _props.menuIsOpen ? _this.buildMenuOptions(_props, _selectValue) : {
       render: [],
@@ -1822,7 +1856,8 @@ function (_Component) {
       this.cacheComponents(nextProps.components); // rebuild the menu options
 
       if (nextProps.value !== value || nextProps.options !== options || nextProps.menuIsOpen !== menuIsOpen || nextProps.inputValue !== inputValue) {
-        var selectValue = cleanValue(nextProps.value);
+        var selectValue = __chunk_1.cleanValue(nextProps.value);
+
         var menuOptions = nextProps.menuIsOpen ? this.buildMenuOptions(nextProps, selectValue) : {
           render: [],
           focusable: []
@@ -1861,7 +1896,7 @@ function (_Component) {
 
 
       if (this.menuListRef && this.focusedOptionRef && this.scrollToFocusedOptionOnUpdate) {
-        scrollIntoView(this.menuListRef, this.focusedOptionRef);
+        __chunk_1.scrollIntoView(this.menuListRef, this.focusedOptionRef);
       }
 
       this.scrollToFocusedOptionOnUpdate = false;
@@ -2102,7 +2137,8 @@ function (_Component) {
         return selectValue;
       };
 
-      var cx = classNames.bind(null, classNamePrefix);
+      var cx = __chunk_1.classNames.bind(null, classNamePrefix);
+
       return {
         cx: cx,
         clearValue: clearValue,
@@ -2409,11 +2445,11 @@ function (_Component) {
 
       if (!isSearchable) {
         // use a dummy input to maintain focus/blur functionality
-        return React.createElement(DummyInput, {
+        return React__default.createElement(DummyInput, {
           id: id,
           innerRef: this.getInputRef,
           onBlur: this.onInputBlur,
-          onChange: noop,
+          onChange: __chunk_1.noop,
           onFocus: this.onInputFocus,
           readOnly: true,
           disabled: isDisabled,
@@ -2432,7 +2468,7 @@ function (_Component) {
           cx = _this$commonProps.cx,
           theme = _this$commonProps.theme,
           selectProps = _this$commonProps.selectProps;
-      return React.createElement(Input, _extends({
+      return React__default.createElement(Input, _extends({
         autoCapitalize: "none",
         autoComplete: "off",
         autoCorrect: "off",
@@ -2478,7 +2514,7 @@ function (_Component) {
           isFocused = _this$state8.isFocused;
 
       if (!this.hasValue() || !controlShouldRenderValue) {
-        return inputValue ? null : React.createElement(Placeholder, _extends({}, commonProps, {
+        return inputValue ? null : React__default.createElement(Placeholder, _extends({}, commonProps, {
           key: "placeholder",
           isDisabled: isDisabled,
           isFocused: isFocused
@@ -2488,7 +2524,7 @@ function (_Component) {
       if (isMulti) {
         var selectValues = selectValue.map(function (opt) {
           var isOptionFocused = opt === focusedValue;
-          return React.createElement(MultiValue, _extends({}, commonProps, {
+          return React__default.createElement(MultiValue, _extends({}, commonProps, {
             components: {
               Container: MultiValueContainer,
               Label: MultiValueLabel,
@@ -2520,7 +2556,7 @@ function (_Component) {
       }
 
       var singleValue = selectValue[0];
-      return React.createElement(SingleValue, _extends({}, commonProps, {
+      return React__default.createElement(SingleValue, _extends({}, commonProps, {
         data: singleValue,
         isDisabled: isDisabled
       }), this.formatOptionLabel(singleValue, 'value'));
@@ -2544,7 +2580,7 @@ function (_Component) {
         onTouchEnd: this.onClearIndicatorTouchEnd,
         'aria-hidden': 'true'
       };
-      return React.createElement(ClearIndicator, _extends({}, commonProps, {
+      return React__default.createElement(ClearIndicator, _extends({}, commonProps, {
         innerProps: innerProps,
         isFocused: isFocused
       }));
@@ -2562,7 +2598,7 @@ function (_Component) {
       var innerProps = {
         'aria-hidden': 'true'
       };
-      return React.createElement(LoadingIndicator, _extends({}, commonProps, {
+      return React__default.createElement(LoadingIndicator, _extends({}, commonProps, {
         innerProps: innerProps,
         isDisabled: isDisabled,
         isFocused: isFocused
@@ -2579,7 +2615,7 @@ function (_Component) {
       var commonProps = this.commonProps;
       var isDisabled = this.props.isDisabled;
       var isFocused = this.state.isFocused;
-      return React.createElement(IndicatorSeparator, _extends({}, commonProps, {
+      return React__default.createElement(IndicatorSeparator, _extends({}, commonProps, {
         isDisabled: isDisabled,
         isFocused: isFocused
       }));
@@ -2597,7 +2633,7 @@ function (_Component) {
         onTouchEnd: this.onDropdownIndicatorTouchEnd,
         'aria-hidden': 'true'
       };
-      return React.createElement(DropdownIndicator, _extends({}, commonProps, {
+      return React__default.createElement(DropdownIndicator, _extends({}, commonProps, {
         innerProps: innerProps,
         isDisabled: isDisabled,
         isFocused: isFocused
@@ -2644,7 +2680,7 @@ function (_Component) {
         // focused option changes so we calculate additional props based on that
         var isFocused = focusedOption === props.data;
         props.innerRef = isFocused ? _this5.getFocusedOptionRef : undefined;
-        return React.createElement(Option, _extends({}, commonProps, props, {
+        return React__default.createElement(Option, _extends({}, commonProps, props, {
           isFocused: isFocused
         }), _this5.formatOptionLabel(props.data, 'menu'));
       };
@@ -2658,7 +2694,7 @@ function (_Component) {
                 group = _objectWithoutProperties(item, ["type"]);
 
             var headingId = "".concat(item.key, "-heading");
-            return React.createElement(Group, _extends({}, commonProps, group, {
+            return React__default.createElement(Group, _extends({}, commonProps, group, {
               Heading: GroupHeading,
               headingProps: {
                 id: headingId
@@ -2676,14 +2712,14 @@ function (_Component) {
           inputValue: inputValue
         });
         if (message === null) return null;
-        menuUI = React.createElement(LoadingMessage, commonProps, message);
+        menuUI = React__default.createElement(LoadingMessage, commonProps, message);
       } else {
         var _message = noOptionsMessage({
           inputValue: inputValue
         });
 
         if (_message === null) return null;
-        menuUI = React.createElement(NoOptionsMessage, commonProps, _message);
+        menuUI = React__default.createElement(NoOptionsMessage, commonProps, _message);
       }
 
       var menuPlacementProps = {
@@ -2693,12 +2729,12 @@ function (_Component) {
         menuPosition: menuPosition,
         menuShouldScrollIntoView: menuShouldScrollIntoView
       };
-      var menuElement = React.createElement(MenuPlacer, _extends({}, commonProps, menuPlacementProps), function (_ref6) {
+      var menuElement = React__default.createElement(__chunk_2.MenuPlacer, _extends({}, commonProps, menuPlacementProps), function (_ref6) {
         var ref = _ref6.ref,
             _ref6$placerProps = _ref6.placerProps,
             placement = _ref6$placerProps.placement,
             maxHeight = _ref6$placerProps.maxHeight;
-        return React.createElement(Menu, _extends({}, commonProps, menuPlacementProps, {
+        return React__default.createElement(Menu, _extends({}, commonProps, menuPlacementProps, {
           innerRef: ref,
           innerProps: {
             onMouseDown: _this5.onMenuMouseDown,
@@ -2706,13 +2742,13 @@ function (_Component) {
           },
           isLoading: isLoading,
           placement: placement
-        }), React.createElement(ScrollCaptorSwitch, {
+        }), React__default.createElement(ScrollCaptorSwitch, {
           isEnabled: captureMenuScroll,
           onTopArrive: onMenuScrollToTop,
           onBottomArrive: onMenuScrollToBottom
-        }, React.createElement(ScrollBlock, {
+        }, React__default.createElement(ScrollBlock, {
           isEnabled: menuShouldBlockScroll
-        }, React.createElement(MenuList, _extends({}, commonProps, {
+        }, React__default.createElement(MenuList, _extends({}, commonProps, {
           innerRef: _this5.getMenuListRef,
           isLoading: isLoading,
           maxHeight: maxHeight
@@ -2721,7 +2757,7 @@ function (_Component) {
       // so we use the same component. the actual portalling logic is forked
       // within the component based on `menuPosition`
 
-      return menuPortalTarget || menuPosition === 'fixed' ? React.createElement(MenuPortal, _extends({}, commonProps, {
+      return menuPortalTarget || menuPosition === 'fixed' ? React__default.createElement(MenuPortal, _extends({}, commonProps, {
         appendTo: menuPortalTarget,
         controlElement: this.controlRef,
         menuPlacement: menuPlacement,
@@ -2746,29 +2782,29 @@ function (_Component) {
           var value = selectValue.map(function (opt) {
             return _this6.getOptionValue(opt);
           }).join(delimiter);
-          return React.createElement("input", {
+          return React__default.createElement("input", {
             name: name,
             type: "hidden",
             value: value
           });
         } else {
           var input = selectValue.length > 0 ? selectValue.map(function (opt, i) {
-            return React.createElement("input", {
+            return React__default.createElement("input", {
               key: "i-".concat(i),
               name: name,
               type: "hidden",
               value: _this6.getOptionValue(opt)
             });
-          }) : React.createElement("input", {
+          }) : React__default.createElement("input", {
             name: name,
             type: "hidden"
           });
-          return React.createElement("div", null, input);
+          return React__default.createElement("div", null, input);
         }
       } else {
         var _value = selectValue[0] ? this.getOptionValue(selectValue[0]) : '';
 
-        return React.createElement("input", {
+        return React__default.createElement("input", {
           name: name,
           type: "hidden",
           value: _value
@@ -2779,11 +2815,11 @@ function (_Component) {
     key: "renderLiveRegion",
     value: function renderLiveRegion() {
       if (!this.state.isFocused) return null;
-      return React.createElement(A11yText, {
+      return React__default.createElement(A11yText, {
         "aria-live": "polite"
-      }, React.createElement("p", {
+      }, React__default.createElement("p", {
         id: "aria-selection-event"
-      }, "\xA0", this.state.ariaLiveSelection), React.createElement("p", {
+      }, "\xA0", this.state.ariaLiveSelection), React__default.createElement("p", {
         id: "aria-context"
       }, "\xA0", this.constructAriaLiveMessage()));
     }
@@ -2802,7 +2838,7 @@ function (_Component) {
           menuIsOpen = _this$props20.menuIsOpen;
       var isFocused = this.state.isFocused;
       var commonProps = this.commonProps = this.getCommonProps();
-      return React.createElement(SelectContainer, _extends({}, commonProps, {
+      return React__default.createElement(SelectContainer, _extends({}, commonProps, {
         className: className,
         innerProps: {
           id: id,
@@ -2810,7 +2846,7 @@ function (_Component) {
         },
         isDisabled: isDisabled,
         isFocused: isFocused
-      }), this.renderLiveRegion(), React.createElement(Control, _extends({}, commonProps, {
+      }), this.renderLiveRegion(), React__default.createElement(Control, _extends({}, commonProps, {
         innerRef: this.getControlRef,
         innerProps: {
           onMouseDown: this.onControlMouseDown,
@@ -2819,17 +2855,21 @@ function (_Component) {
         isDisabled: isDisabled,
         isFocused: isFocused,
         menuIsOpen: menuIsOpen
-      }), React.createElement(ValueContainer, _extends({}, commonProps, {
+      }), React__default.createElement(ValueContainer, _extends({}, commonProps, {
         isDisabled: isDisabled
-      }), this.renderPlaceholderOrValue(), this.renderInput()), React.createElement(IndicatorsContainer, _extends({}, commonProps, {
+      }), this.renderPlaceholderOrValue(), this.renderInput()), React__default.createElement(IndicatorsContainer, _extends({}, commonProps, {
         isDisabled: isDisabled
       }), this.renderClearIndicator(), this.renderLoadingIndicator(), this.renderIndicatorSeparator(), this.renderDropdownIndicator())), this.renderMenu(), this.renderFormField());
     }
   }]);
 
   return Select;
-}(Component);
+}(React.Component);
 
 _defineProperty(Select, "defaultProps", defaultProps);
 
-export { Select as S, defaultTheme as a, createFilter as c, defaultProps as d, mergeStyles as m };
+exports.Select = Select;
+exports.createFilter = createFilter;
+exports.defaultProps = defaultProps;
+exports.defaultTheme = defaultTheme;
+exports.mergeStyles = mergeStyles;

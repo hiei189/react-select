@@ -16,9 +16,9 @@ var _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers
 
 var _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits = _interopDefault(require("@babel/runtime/helpers/inherits"));
+
+var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
 var _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty"));
 
@@ -53,15 +53,15 @@ var manageState = function manageState(SelectComponent) {
 
       _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(StateManager)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-      _defineProperty(_assertThisInitialized(_this), "select", void 0);
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "select", void 0);
 
-      _defineProperty(_assertThisInitialized(_this), "state", {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
         inputValue: _this.props.inputValue !== undefined ? _this.props.inputValue : _this.props.defaultInputValue,
         menuIsOpen: _this.props.menuIsOpen !== undefined ? _this.props.menuIsOpen : _this.props.defaultMenuIsOpen,
         value: _this.props.value !== undefined ? _this.props.value : _this.props.defaultValue
       });
 
-      _defineProperty(_assertThisInitialized(_this), "onChange", function (value, actionMeta) {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (value, actionMeta) {
         _this.callProp('onChange', value, actionMeta);
 
         _this.setState({
@@ -69,7 +69,7 @@ var manageState = function manageState(SelectComponent) {
         });
       });
 
-      _defineProperty(_assertThisInitialized(_this), "onInputChange", function (value, actionMeta) {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputChange", function (value, actionMeta) {
         // TODO: for backwards compatibility, we allow the prop to return a new
         // value, but now inputValue is a controllable prop we probably shouldn't
         var newValue = _this.callProp('onInputChange', value, actionMeta);
@@ -79,7 +79,7 @@ var manageState = function manageState(SelectComponent) {
         });
       });
 
-      _defineProperty(_assertThisInitialized(_this), "onMenuOpen", function () {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuOpen", function () {
         _this.callProp('onMenuOpen');
 
         _this.setState({
@@ -87,7 +87,7 @@ var manageState = function manageState(SelectComponent) {
         });
       });
 
-      _defineProperty(_assertThisInitialized(_this), "onMenuClose", function () {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuClose", function () {
         _this.callProp('onMenuClose');
 
         _this.setState({

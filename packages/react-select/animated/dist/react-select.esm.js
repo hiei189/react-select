@@ -5,8 +5,8 @@ import _classCallCheck from '@babel/runtime/helpers/esm/classCallCheck';
 import _createClass from '@babel/runtime/helpers/esm/createClass';
 import _possibleConstructorReturn from '@babel/runtime/helpers/esm/possibleConstructorReturn';
 import _getPrototypeOf from '@babel/runtime/helpers/esm/getPrototypeOf';
-import _assertThisInitialized from '@babel/runtime/helpers/esm/assertThisInitialized';
 import _inherits from '@babel/runtime/helpers/esm/inherits';
+import _assertThisInitialized from '@babel/runtime/helpers/esm/assertThisInitialized';
 import _defineProperty from '@babel/runtime/helpers/esm/defineProperty';
 import React, { Component } from 'react';
 import memoizeOne from 'memoize-one';
@@ -16,7 +16,7 @@ import 'prop-types';
 import '@babel/runtime/helpers/esm/typeof';
 import 'raf';
 import '../../dist/chunk-e8ae4b0f.esm.js';
-import { x as exportedEqual, w as defaultComponents } from '../../dist/chunk-f0851c13.esm.js';
+import { x as exportedEqual, w as defaultComponents } from '../../dist/chunk-5d200a41.esm.js';
 import '@emotion/css';
 import '@babel/runtime/helpers/esm/taggedTemplateLiteral';
 import 'react-input-autosize';
@@ -98,15 +98,15 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Collapse)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "duration", collapseDuration);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "duration", collapseDuration);
 
-    _defineProperty(_assertThisInitialized(_this), "rafID", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "rafID", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       width: 'auto'
     });
 
-    _defineProperty(_assertThisInitialized(_this), "transition", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "transition", {
       exiting: {
         width: 0,
         transition: "width ".concat(_this.duration, "ms ease-out")
@@ -116,7 +116,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getWidth", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getWidth", function (ref) {
       if (ref && isNaN(_this.state.width)) {
         /*
           Here we're invoking requestAnimationFrame with a callback invoking our
@@ -137,7 +137,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getStyle", function (width) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getStyle", function (width) {
       return {
         overflow: 'hidden',
         whiteSpace: 'nowrap',
@@ -145,7 +145,7 @@ function (_Component) {
       };
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getTransition", function (state) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getTransition", function (state) {
       return _this.transition[state];
     });
 

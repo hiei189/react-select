@@ -4,7 +4,7 @@ function _interopDefault(ex) {
   return ex && "object" == typeof ex && "default" in ex ? ex.default : ex;
 }
 
-var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _toConsumableArray = _interopDefault(require("@babel/runtime/helpers/toConsumableArray")), _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), memoizeOne = _interopDefault(require("memoize-one")), core = require("@emotion/core"), reactDom = require("react-dom"), __chunk_1 = require("../../chunk-c9662232.cjs.prod.js"), __chunk_2 = require("../../chunk-1c9d6d4d.cjs.prod.js"), _css = _interopDefault(require("@emotion/css")), diacritics = [ {
+var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _toConsumableArray = _interopDefault(require("@babel/runtime/helpers/toConsumableArray")), _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), memoizeOne = _interopDefault(require("memoize-one")), core = require("@emotion/core"), reactDom = require("react-dom"), __chunk_1 = require("../../chunk-c9662232.cjs.prod.js"), __chunk_2 = require("../../chunk-4c778abc.cjs.prod.js"), _css = _interopDefault(require("@emotion/css")), diacritics = [ {
   base: "A",
   letters: /[\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F]/g
 }, {
@@ -363,7 +363,8 @@ var canUseDOM = !("undefined" == typeof window || !window.document || !window.do
     _classCallCheck(this, ScrollLock);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
     return _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollLock)).call.apply(_getPrototypeOf2, [ this ].concat(args))), 
-    _defineProperty(_assertThisInitialized(_this), "originalStyles", {}), _defineProperty(_assertThisInitialized(_this), "listenerOptions", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "originalStyles", {}), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "listenerOptions", {
       capture: !1,
       passive: !1
     }), _this;
@@ -425,13 +426,13 @@ var _ref$1 = {
     _classCallCheck(this, ScrollBlock);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
     return _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollBlock)).call.apply(_getPrototypeOf2, [ this ].concat(args))), 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       touchScrollTarget: null
-    }), _defineProperty(_assertThisInitialized(_this), "getScrollTarget", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getScrollTarget", function(ref) {
       ref !== _this.state.touchScrollTarget && _this.setState({
         touchScrollTarget: ref
       });
-    }), _defineProperty(_assertThisInitialized(_this), "blurSelectInput", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blurSelectInput", function() {
       document.activeElement && document.activeElement.blur();
     }), _this;
   }
@@ -455,25 +456,27 @@ var _ref$1 = {
     _classCallCheck(this, ScrollCaptor);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
     return _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollCaptor)).call.apply(_getPrototypeOf2, [ this ].concat(args))), 
-    _defineProperty(_assertThisInitialized(_this), "isBottom", !1), _defineProperty(_assertThisInitialized(_this), "isTop", !1), 
-    _defineProperty(_assertThisInitialized(_this), "scrollTarget", void 0), _defineProperty(_assertThisInitialized(_this), "touchStart", void 0), 
-    _defineProperty(_assertThisInitialized(_this), "cancelScroll", function(event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isBottom", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isTop", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollTarget", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "touchStart", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cancelScroll", function(event) {
       event.preventDefault(), event.stopPropagation();
-    }), _defineProperty(_assertThisInitialized(_this), "handleEventDelta", function(event, delta) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleEventDelta", function(event, delta) {
       var _this$props = _this.props, onBottomArrive = _this$props.onBottomArrive, onBottomLeave = _this$props.onBottomLeave, onTopArrive = _this$props.onTopArrive, onTopLeave = _this$props.onTopLeave, _this$scrollTarget = _this.scrollTarget, scrollTop = _this$scrollTarget.scrollTop, scrollHeight = _this$scrollTarget.scrollHeight, clientHeight = _this$scrollTarget.clientHeight, target = _this.scrollTarget, isDeltaPositive = delta > 0, availableScroll = scrollHeight - clientHeight - scrollTop, shouldCancelScroll = !1;
       availableScroll > delta && _this.isBottom && (onBottomLeave && onBottomLeave(event), 
       _this.isBottom = !1), isDeltaPositive && _this.isTop && (onTopLeave && onTopLeave(event), 
       _this.isTop = !1), isDeltaPositive && delta > availableScroll ? (onBottomArrive && !_this.isBottom && onBottomArrive(event), 
       target.scrollTop = scrollHeight, shouldCancelScroll = !0, _this.isBottom = !0) : !isDeltaPositive && -delta > scrollTop && (onTopArrive && !_this.isTop && onTopArrive(event), 
       target.scrollTop = 0, shouldCancelScroll = !0, _this.isTop = !0), shouldCancelScroll && _this.cancelScroll(event);
-    }), _defineProperty(_assertThisInitialized(_this), "onWheel", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onWheel", function(event) {
       _this.handleEventDelta(event, event.deltaY);
-    }), _defineProperty(_assertThisInitialized(_this), "onTouchStart", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchStart", function(event) {
       _this.touchStart = event.changedTouches[0].clientY;
-    }), _defineProperty(_assertThisInitialized(_this), "onTouchMove", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchMove", function(event) {
       var deltaY = _this.touchStart - event.changedTouches[0].clientY;
       _this.handleEventDelta(event, deltaY);
-    }), _defineProperty(_assertThisInitialized(_this), "getScrollTarget", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getScrollTarget", function(ref) {
       _this.scrollTarget = ref;
     }), _this;
   }
@@ -674,7 +677,7 @@ var colors = {
   function Select(_props) {
     var _this;
     _classCallCheck(this, Select), _this = _possibleConstructorReturn(this, _getPrototypeOf(Select).call(this, _props)), 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       ariaLiveSelection: "",
       ariaLiveContext: "",
       focusedOption: null,
@@ -686,33 +689,43 @@ var colors = {
         focusable: []
       },
       selectValue: []
-    }), _defineProperty(_assertThisInitialized(_this), "blockOptionHover", !1), _defineProperty(_assertThisInitialized(_this), "isComposing", !1), 
-    _defineProperty(_assertThisInitialized(_this), "clearFocusValueOnUpdate", !1), _defineProperty(_assertThisInitialized(_this), "commonProps", void 0), 
-    _defineProperty(_assertThisInitialized(_this), "components", void 0), _defineProperty(_assertThisInitialized(_this), "hasGroups", !1), 
-    _defineProperty(_assertThisInitialized(_this), "initialTouchX", 0), _defineProperty(_assertThisInitialized(_this), "initialTouchY", 0), 
-    _defineProperty(_assertThisInitialized(_this), "inputIsHiddenAfterUpdate", void 0), 
-    _defineProperty(_assertThisInitialized(_this), "instancePrefix", ""), _defineProperty(_assertThisInitialized(_this), "openAfterFocus", !1), 
-    _defineProperty(_assertThisInitialized(_this), "scrollToFocusedOptionOnUpdate", !1), 
-    _defineProperty(_assertThisInitialized(_this), "userIsDragging", void 0), _defineProperty(_assertThisInitialized(_this), "controlRef", null), 
-    _defineProperty(_assertThisInitialized(_this), "getControlRef", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blockOptionHover", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isComposing", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearFocusValueOnUpdate", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "commonProps", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "components", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "hasGroups", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialTouchX", 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialTouchY", 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputIsHiddenAfterUpdate", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "instancePrefix", ""), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "openAfterFocus", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollToFocusedOptionOnUpdate", !1), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "userIsDragging", void 0), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "controlRef", null), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getControlRef", function(ref) {
       _this.controlRef = ref;
-    }), _defineProperty(_assertThisInitialized(_this), "focusedOptionRef", null), _defineProperty(_assertThisInitialized(_this), "getFocusedOptionRef", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "focusedOptionRef", null), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getFocusedOptionRef", function(ref) {
       _this.focusedOptionRef = ref;
-    }), _defineProperty(_assertThisInitialized(_this), "menuListRef", null), _defineProperty(_assertThisInitialized(_this), "getMenuListRef", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "menuListRef", null), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getMenuListRef", function(ref) {
       _this.menuListRef = ref;
-    }), _defineProperty(_assertThisInitialized(_this), "inputRef", null), _defineProperty(_assertThisInitialized(_this), "getInputRef", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", null), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getInputRef", function(ref) {
       _this.inputRef = ref;
-    }), _defineProperty(_assertThisInitialized(_this), "cacheComponents", function(components) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cacheComponents", function(components) {
       _this.components = __chunk_2.defaultComponents({
         components: components
       });
-    }), _defineProperty(_assertThisInitialized(_this), "focus", _this.focusInput), _defineProperty(_assertThisInitialized(_this), "blur", _this.blurInput), 
-    _defineProperty(_assertThisInitialized(_this), "onChange", function(newValue, actionMeta) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "focus", _this.focusInput), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blur", _this.blurInput), 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function(newValue, actionMeta) {
       var _this$props = _this.props, onChange = _this$props.onChange, name = _this$props.name;
       onChange(newValue, _objectSpread({}, actionMeta, {
         name: name
       }));
-    }), _defineProperty(_assertThisInitialized(_this), "setValue", function(newValue) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setValue", function(newValue) {
       var action = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "set-value", option = arguments.length > 2 ? arguments[2] : void 0, _this$props2 = _this.props, closeMenuOnSelect = _this$props2.closeMenuOnSelect, isMulti = _this$props2.isMulti;
       _this.onInputChange("", {
         action: "set-value"
@@ -721,7 +734,7 @@ var colors = {
         action: action,
         option: option
       });
-    }), _defineProperty(_assertThisInitialized(_this), "selectOption", function(newValue) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function(newValue) {
       var _this$props3 = _this.props, blurInputOnSelect = _this$props3.blurInputOnSelect, isMulti = _this$props3.isMulti, selectValue = _this.state.selectValue;
       if (isMulti) if (_this.isOptionSelected(newValue, selectValue)) {
         var candidate = _this.getOptionValue(newValue);
@@ -758,7 +771,7 @@ var colors = {
         }
       }));
       blurInputOnSelect && _this.blurInput();
-    }), _defineProperty(_assertThisInitialized(_this), "removeValue", function(removedValue) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeValue", function(removedValue) {
       var selectValue = _this.state.selectValue, candidate = _this.getOptionValue(removedValue), newValue = selectValue.filter(function(i) {
         return _this.getOptionValue(i) !== candidate;
       });
@@ -771,12 +784,12 @@ var colors = {
           value: removedValue ? _this.getOptionLabel(removedValue) : ""
         }
       }), _this.focusInput();
-    }), _defineProperty(_assertThisInitialized(_this), "clearValue", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearValue", function() {
       var isMulti = _this.props.isMulti;
       _this.onChange(isMulti ? [] : null, {
         action: "clear"
       });
-    }), _defineProperty(_assertThisInitialized(_this), "popValue", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "popValue", function() {
       var selectValue = _this.state.selectValue, lastSelectedValue = selectValue[selectValue.length - 1], newValue = selectValue.slice(0, selectValue.length - 1);
       _this.announceAriaLiveSelection({
         event: "pop-value",
@@ -787,85 +800,85 @@ var colors = {
         action: "pop-value",
         removedValue: lastSelectedValue
       });
-    }), _defineProperty(_assertThisInitialized(_this), "getOptionLabel", function(data) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getOptionLabel", function(data) {
       return _this.props.getOptionLabel(data);
-    }), _defineProperty(_assertThisInitialized(_this), "getOptionValue", function(data) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getOptionValue", function(data) {
       return _this.props.getOptionValue(data);
-    }), _defineProperty(_assertThisInitialized(_this), "getStyles", function(key, props) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getStyles", function(key, props) {
       var base = defaultStyles[key](props);
       base.boxSizing = "border-box";
       var custom = _this.props.styles[key];
       return custom ? custom(base, props) : base;
-    }), _defineProperty(_assertThisInitialized(_this), "getElementId", function(element) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getElementId", function(element) {
       return "".concat(_this.instancePrefix, "-").concat(element);
-    }), _defineProperty(_assertThisInitialized(_this), "getActiveDescendentId", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getActiveDescendentId", function() {
       var menuIsOpen = _this.props.menuIsOpen, _this$state = _this.state, menuOptions = _this$state.menuOptions, focusedOption = _this$state.focusedOption;
       if (focusedOption && menuIsOpen) {
         var index = menuOptions.focusable.indexOf(focusedOption), option = menuOptions.render[index];
         return option && option.key;
       }
-    }), _defineProperty(_assertThisInitialized(_this), "announceAriaLiveSelection", function(_ref2) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceAriaLiveSelection", function(_ref2) {
       var event = _ref2.event, context = _ref2.context;
       _this.setState({
         ariaLiveSelection: valueEventAriaMessage(event, context)
       });
-    }), _defineProperty(_assertThisInitialized(_this), "announceAriaLiveContext", function(_ref3) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceAriaLiveContext", function(_ref3) {
       var event = _ref3.event, context = _ref3.context;
       _this.setState({
         ariaLiveContext: instructionsAriaMessage(event, _objectSpread({}, context, {
           label: _this.props["aria-label"]
         }))
       });
-    }), _defineProperty(_assertThisInitialized(_this), "onMenuMouseDown", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuMouseDown", function(event) {
       0 === event.button && (event.stopPropagation(), event.preventDefault(), _this.focusInput());
-    }), _defineProperty(_assertThisInitialized(_this), "onMenuMouseMove", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuMouseMove", function(event) {
       _this.blockOptionHover = !1;
-    }), _defineProperty(_assertThisInitialized(_this), "onControlMouseDown", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onControlMouseDown", function(event) {
       var openMenuOnClick = _this.props.openMenuOnClick;
       _this.state.isFocused ? _this.props.menuIsOpen ? "INPUT" !== event.target.tagName && _this.onMenuClose() : openMenuOnClick && _this.openMenu("first") : (openMenuOnClick && (_this.openAfterFocus = !0), 
       _this.focusInput()), "INPUT" !== event.target.tagName && event.preventDefault();
-    }), _defineProperty(_assertThisInitialized(_this), "onDropdownIndicatorMouseDown", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropdownIndicatorMouseDown", function(event) {
       if (!(event && "mousedown" === event.type && 0 !== event.button || _this.props.isDisabled)) {
         var _this$props4 = _this.props, isMulti = _this$props4.isMulti, menuIsOpen = _this$props4.menuIsOpen;
         _this.focusInput(), menuIsOpen ? (_this.inputIsHiddenAfterUpdate = !isMulti, _this.onMenuClose()) : _this.openMenu("first"), 
         event.preventDefault(), event.stopPropagation();
       }
-    }), _defineProperty(_assertThisInitialized(_this), "onClearIndicatorMouseDown", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClearIndicatorMouseDown", function(event) {
       event && "mousedown" === event.type && 0 !== event.button || (_this.clearValue(), 
       event.stopPropagation(), _this.openAfterFocus = !1, "touchend" === event.type ? _this.focusInput() : setTimeout(function() {
         return _this.focusInput();
       }));
-    }), _defineProperty(_assertThisInitialized(_this), "onScroll", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScroll", function(event) {
       "boolean" == typeof _this.props.closeMenuOnScroll ? event.target instanceof HTMLElement && __chunk_1.isDocumentElement(event.target) && _this.props.onMenuClose() : "function" == typeof _this.props.closeMenuOnScroll && _this.props.closeMenuOnScroll(event) && _this.props.onMenuClose();
-    }), _defineProperty(_assertThisInitialized(_this), "onCompositionStart", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onCompositionStart", function() {
       _this.isComposing = !0;
-    }), _defineProperty(_assertThisInitialized(_this), "onCompositionEnd", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onCompositionEnd", function() {
       _this.isComposing = !1;
-    }), _defineProperty(_assertThisInitialized(_this), "onTouchStart", function(_ref4) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchStart", function(_ref4) {
       var touch = _ref4.touches.item(0);
       touch && (_this.initialTouchX = touch.clientX, _this.initialTouchY = touch.clientY, 
       _this.userIsDragging = !1);
-    }), _defineProperty(_assertThisInitialized(_this), "onTouchMove", function(_ref5) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchMove", function(_ref5) {
       var touch = _ref5.touches.item(0);
       if (touch) {
         var deltaX = Math.abs(touch.clientX - _this.initialTouchX), deltaY = Math.abs(touch.clientY - _this.initialTouchY);
         _this.userIsDragging = deltaX > 5 || deltaY > 5;
       }
-    }), _defineProperty(_assertThisInitialized(_this), "onTouchEnd", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchEnd", function(event) {
       _this.userIsDragging || (_this.controlRef && !_this.controlRef.contains(event.target) && _this.menuListRef && !_this.menuListRef.contains(event.target) && _this.blurInput(), 
       _this.initialTouchX = 0, _this.initialTouchY = 0);
-    }), _defineProperty(_assertThisInitialized(_this), "onControlTouchEnd", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onControlTouchEnd", function(event) {
       _this.userIsDragging || _this.onControlMouseDown(event);
-    }), _defineProperty(_assertThisInitialized(_this), "onClearIndicatorTouchEnd", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClearIndicatorTouchEnd", function(event) {
       _this.userIsDragging || _this.onClearIndicatorMouseDown(event);
-    }), _defineProperty(_assertThisInitialized(_this), "onDropdownIndicatorTouchEnd", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropdownIndicatorTouchEnd", function(event) {
       _this.userIsDragging || _this.onDropdownIndicatorMouseDown(event);
-    }), _defineProperty(_assertThisInitialized(_this), "handleInputChange", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleInputChange", function(event) {
       var inputValue = event.currentTarget.value;
       _this.inputIsHiddenAfterUpdate = !1, _this.onInputChange(inputValue, {
         action: "input-change"
       }), _this.onMenuOpen();
-    }), _defineProperty(_assertThisInitialized(_this), "onInputFocus", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputFocus", function(event) {
       var _this$props5 = _this.props, isSearchable = _this$props5.isSearchable, isMulti = _this$props5.isMulti;
       _this.props.onFocus && _this.props.onFocus(event), _this.inputIsHiddenAfterUpdate = !1, 
       _this.announceAriaLiveContext({
@@ -878,7 +891,7 @@ var colors = {
         isFocused: !0
       }), (_this.openAfterFocus || _this.props.openMenuOnFocus) && _this.openMenu("first"), 
       _this.openAfterFocus = !1;
-    }), _defineProperty(_assertThisInitialized(_this), "onInputBlur", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputBlur", function(event) {
       _this.menuListRef && _this.menuListRef.contains(document.activeElement) ? _this.inputRef.focus() : (_this.props.onBlur && _this.props.onBlur(event), 
       _this.onInputChange("", {
         action: "input-blur"
@@ -886,14 +899,14 @@ var colors = {
         focusedValue: null,
         isFocused: !1
       }));
-    }), _defineProperty(_assertThisInitialized(_this), "onOptionHover", function(focusedOption) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOptionHover", function(focusedOption) {
       _this.blockOptionHover || _this.state.focusedOption === focusedOption || _this.setState({
         focusedOption: focusedOption
       });
-    }), _defineProperty(_assertThisInitialized(_this), "shouldHideSelectedOptions", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "shouldHideSelectedOptions", function() {
       var _this$props6 = _this.props, hideSelectedOptions = _this$props6.hideSelectedOptions, isMulti = _this$props6.isMulti;
       return void 0 === hideSelectedOptions ? isMulti : hideSelectedOptions;
-    }), _defineProperty(_assertThisInitialized(_this), "onKeyDown", function(event) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onKeyDown", function(event) {
       var _this$props7 = _this.props, isMulti = _this$props7.isMulti, backspaceRemovesValue = _this$props7.backspaceRemovesValue, escapeClearsValue = _this$props7.escapeClearsValue, inputValue = _this$props7.inputValue, isClearable = _this$props7.isClearable, isDisabled = _this$props7.isDisabled, menuIsOpen = _this$props7.menuIsOpen, onKeyDown = _this$props7.onKeyDown, tabSelectsValue = _this$props7.tabSelectsValue, openMenuOnFocus = _this$props7.openMenuOnFocus, _this$state2 = _this.state, focusedOption = _this$state2.focusedOption, focusedValue = _this$state2.focusedValue, selectValue = _this$state2.selectValue;
       if (!(isDisabled || "function" == typeof onKeyDown && (onKeyDown(event), event.defaultPrevented))) {
         switch (_this.blockOptionHover = !0, event.key) {
@@ -983,7 +996,7 @@ var colors = {
       }
     });
     var value = _props.value;
-    _this.cacheComponents = memoizeOne(_this.cacheComponents, __chunk_2.exportedEqual).bind(_assertThisInitialized(_this)), 
+    _this.cacheComponents = memoizeOne(_this.cacheComponents, __chunk_2.exportedEqual).bind(_assertThisInitialized(_assertThisInitialized(_this))), 
     _this.cacheComponents(_props.components), _this.instancePrefix = "react-select-" + (_this.props.instanceId || ++instanceId);
     var _selectValue = __chunk_1.cleanValue(value), _menuOptions = _props.menuIsOpen ? _this.buildMenuOptions(_props, _selectValue) : {
       render: [],

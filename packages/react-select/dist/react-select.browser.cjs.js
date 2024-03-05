@@ -24,9 +24,9 @@ var _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers
 
 var _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits = _interopDefault(require("@babel/runtime/helpers/inherits"));
+
+var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
 var _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty"));
 
@@ -48,9 +48,9 @@ require('raf');
 
 require('./chunk-c9662232.browser.cjs.js');
 
-var __chunk_2 = require('./chunk-50137db3.browser.cjs.js');
+var __chunk_2 = require('./chunk-9e023caa.browser.cjs.js');
 
-var reactSelect = require('./base/dist/react-select-e342a4da.browser.cjs.js');
+var reactSelect = require('./base/dist/react-select-4e314dde.browser.cjs.js');
 
 require('@emotion/css');
 
@@ -58,7 +58,7 @@ require("@babel/runtime/helpers/taggedTemplateLiteral");
 
 require('react-input-autosize');
 
-var __chunk_3 = require('./chunk-d117fa1a.browser.cjs.js');
+var __chunk_3 = require('./chunk-185dfbdc.browser.cjs.js');
 
 var createCache = _interopDefault(require('@emotion/cache'));
 
@@ -74,7 +74,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NonceProvider).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "createEmotionCache", function (nonce) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "createEmotionCache", function (nonce) {
       return createCache({
         nonce: nonce
       });

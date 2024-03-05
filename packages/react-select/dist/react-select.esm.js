@@ -6,8 +6,8 @@ import _classCallCheck from '@babel/runtime/helpers/esm/classCallCheck';
 import _createClass from '@babel/runtime/helpers/esm/createClass';
 import _possibleConstructorReturn from '@babel/runtime/helpers/esm/possibleConstructorReturn';
 import _getPrototypeOf from '@babel/runtime/helpers/esm/getPrototypeOf';
-import _assertThisInitialized from '@babel/runtime/helpers/esm/assertThisInitialized';
 import _inherits from '@babel/runtime/helpers/esm/inherits';
+import _assertThisInitialized from '@babel/runtime/helpers/esm/assertThisInitialized';
 import _defineProperty from '@babel/runtime/helpers/esm/defineProperty';
 import React, { Component } from 'react';
 import memoizeOne from 'memoize-one';
@@ -17,13 +17,13 @@ import 'prop-types';
 import '@babel/runtime/helpers/esm/typeof';
 import 'raf';
 import './chunk-e8ae4b0f.esm.js';
-export { y as components } from './chunk-f0851c13.esm.js';
-import { S as Select } from './base/dist/react-select-72ff9ee2.esm.js';
-export { c as createFilter, a as defaultTheme, m as mergeStyles } from './base/dist/react-select-72ff9ee2.esm.js';
+export { y as components } from './chunk-5d200a41.esm.js';
+import { S as Select } from './base/dist/react-select-cdd7016e.esm.js';
+export { c as createFilter, a as defaultTheme, m as mergeStyles } from './base/dist/react-select-cdd7016e.esm.js';
 import '@emotion/css';
 import '@babel/runtime/helpers/esm/taggedTemplateLiteral';
 import 'react-input-autosize';
-import { m as manageState } from './chunk-79921ff3.esm.js';
+import { m as manageState } from './chunk-b36baf1a.esm.js';
 import createCache from '@emotion/cache';
 
 var NonceProvider =
@@ -38,7 +38,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NonceProvider).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_this), "createEmotionCache", function (nonce) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "createEmotionCache", function (nonce) {
       return createCache({
         nonce: nonce
       });

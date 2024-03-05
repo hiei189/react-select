@@ -24,9 +24,9 @@ var _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers
 
 var _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits = _interopDefault(require("@babel/runtime/helpers/inherits"));
+
+var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
 var _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty"));
 
@@ -48,9 +48,9 @@ require('raf');
 
 var __chunk_1 = require('../../dist/chunk-c9662232.cjs.dev.js');
 
-require('../../dist/chunk-50137db3.cjs.dev.js');
+require('../../dist/chunk-9e023caa.cjs.dev.js');
 
-var reactSelect = require('../../dist/base/dist/react-select-a59daf1f.cjs.dev.js');
+var reactSelect = require('../../dist/base/dist/react-select-669fc6c4.cjs.dev.js');
 
 require('@emotion/css');
 
@@ -58,7 +58,7 @@ require("@babel/runtime/helpers/taggedTemplateLiteral");
 
 require('react-input-autosize');
 
-var __chunk_3 = require('../../dist/chunk-d117fa1a.cjs.dev.js');
+var __chunk_3 = require('../../dist/chunk-185dfbdc.cjs.dev.js');
 
 var compareOption = function compareOption() {
   var inputValue = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
@@ -109,9 +109,9 @@ var makeCreatableSelect = function makeCreatableSelect(SelectComponent) {
 
       _this = _possibleConstructorReturn(this, _getPrototypeOf(Creatable).call(this, props));
 
-      _defineProperty(_assertThisInitialized(_this), "select", void 0);
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "select", void 0);
 
-      _defineProperty(_assertThisInitialized(_this), "onChange", function (newValue, actionMeta) {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (newValue, actionMeta) {
         var _this$props = _this.props,
             getNewOptionData = _this$props.getNewOptionData,
             inputValue = _this$props.inputValue,

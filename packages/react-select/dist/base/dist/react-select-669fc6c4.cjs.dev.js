@@ -20,9 +20,9 @@ var _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers
 
 var _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
 var _inherits = _interopDefault(require("@babel/runtime/helpers/inherits"));
+
+var _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
 var _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty"));
 
@@ -36,9 +36,9 @@ var core = require('@emotion/core');
 
 var reactDom = require('react-dom');
 
-var __chunk_1 = require('../../chunk-c9662232.browser.cjs.js');
+var __chunk_1 = require('../../chunk-c9662232.cjs.dev.js');
 
-var __chunk_2 = require('../../chunk-50137db3.browser.cjs.js');
+var __chunk_2 = require('../../chunk-9e023caa.cjs.dev.js');
 
 var _css = _interopDefault(require('@emotion/css'));
 
@@ -480,7 +480,7 @@ function isTouchDevice() {
   return 'ontouchstart' in window || navigator.maxTouchPoints;
 }
 
-var canUseDOM = !!(window.document && window.document.createElement);
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 var activeScrollLocks = 0;
 
 var ScrollLock =
@@ -501,9 +501,9 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollLock)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "originalStyles", {});
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "originalStyles", {});
 
-    _defineProperty(_assertThisInitialized(_this), "listenerOptions", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "listenerOptions", {
       capture: false,
       passive: false
     });
@@ -642,11 +642,11 @@ function (_PureComponent) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollBlock)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       touchScrollTarget: null
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getScrollTarget", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getScrollTarget", function (ref) {
       if (ref === _this.state.touchScrollTarget) return;
 
       _this.setState({
@@ -654,7 +654,7 @@ function (_PureComponent) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "blurSelectInput", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blurSelectInput", function () {
       if (document.activeElement) {
         document.activeElement.blur();
       }
@@ -717,20 +717,20 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(ScrollCaptor)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "isBottom", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isBottom", false);
 
-    _defineProperty(_assertThisInitialized(_this), "isTop", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isTop", false);
 
-    _defineProperty(_assertThisInitialized(_this), "scrollTarget", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollTarget", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "touchStart", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "touchStart", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "cancelScroll", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cancelScroll", function (event) {
       event.preventDefault();
       event.stopPropagation();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleEventDelta", function (event, delta) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleEventDelta", function (event, delta) {
       var _this$props = _this.props,
           onBottomArrive = _this$props.onBottomArrive,
           onBottomLeave = _this$props.onBottomLeave,
@@ -780,22 +780,22 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onWheel", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onWheel", function (event) {
       _this.handleEventDelta(event, event.deltaY);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchStart", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchStart", function (event) {
       // set touch start so we can calculate touchmove delta
       _this.touchStart = event.changedTouches[0].clientY;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchMove", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchMove", function (event) {
       var deltaY = _this.touchStart - event.changedTouches[0].clientY;
 
       _this.handleEventDelta(event, deltaY);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getScrollTarget", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getScrollTarget", function (ref) {
       _this.scrollTarget = ref;
     });
 
@@ -1107,7 +1107,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Select).call(this, _props));
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       ariaLiveSelection: '',
       ariaLiveContext: '',
       focusedOption: null,
@@ -1121,67 +1121,67 @@ function (_Component) {
       selectValue: []
     });
 
-    _defineProperty(_assertThisInitialized(_this), "blockOptionHover", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blockOptionHover", false);
 
-    _defineProperty(_assertThisInitialized(_this), "isComposing", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "isComposing", false);
 
-    _defineProperty(_assertThisInitialized(_this), "clearFocusValueOnUpdate", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearFocusValueOnUpdate", false);
 
-    _defineProperty(_assertThisInitialized(_this), "commonProps", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "commonProps", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "components", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "components", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "hasGroups", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "hasGroups", false);
 
-    _defineProperty(_assertThisInitialized(_this), "initialTouchX", 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialTouchX", 0);
 
-    _defineProperty(_assertThisInitialized(_this), "initialTouchY", 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "initialTouchY", 0);
 
-    _defineProperty(_assertThisInitialized(_this), "inputIsHiddenAfterUpdate", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputIsHiddenAfterUpdate", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "instancePrefix", '');
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "instancePrefix", '');
 
-    _defineProperty(_assertThisInitialized(_this), "openAfterFocus", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "openAfterFocus", false);
 
-    _defineProperty(_assertThisInitialized(_this), "scrollToFocusedOptionOnUpdate", false);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "scrollToFocusedOptionOnUpdate", false);
 
-    _defineProperty(_assertThisInitialized(_this), "userIsDragging", void 0);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "userIsDragging", void 0);
 
-    _defineProperty(_assertThisInitialized(_this), "controlRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "controlRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getControlRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getControlRef", function (ref) {
       _this.controlRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "focusedOptionRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "focusedOptionRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getFocusedOptionRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getFocusedOptionRef", function (ref) {
       _this.focusedOptionRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "menuListRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "menuListRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getMenuListRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getMenuListRef", function (ref) {
       _this.menuListRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "inputRef", null);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "inputRef", null);
 
-    _defineProperty(_assertThisInitialized(_this), "getInputRef", function (ref) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getInputRef", function (ref) {
       _this.inputRef = ref;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "cacheComponents", function (components) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cacheComponents", function (components) {
       _this.components = __chunk_2.defaultComponents({
         components: components
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "focus", _this.focusInput);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "focus", _this.focusInput);
 
-    _defineProperty(_assertThisInitialized(_this), "blur", _this.blurInput);
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "blur", _this.blurInput);
 
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (newValue, actionMeta) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onChange", function (newValue, actionMeta) {
       var _this$props = _this.props,
           onChange = _this$props.onChange,
           name = _this$props.name;
@@ -1190,7 +1190,7 @@ function (_Component) {
       }));
     });
 
-    _defineProperty(_assertThisInitialized(_this), "setValue", function (newValue) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "setValue", function (newValue) {
       var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'set-value';
       var option = arguments.length > 2 ? arguments[2] : undefined;
       var _this$props2 = _this.props,
@@ -1216,7 +1216,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "selectOption", function (newValue) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "selectOption", function (newValue) {
       var _this$props3 = _this.props,
           blurInputOnSelect = _this$props3.blurInputOnSelect,
           isMulti = _this$props3.isMulti;
@@ -1284,7 +1284,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "removeValue", function (removedValue) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "removeValue", function (removedValue) {
       var selectValue = _this.state.selectValue;
 
       var candidate = _this.getOptionValue(removedValue);
@@ -1308,7 +1308,7 @@ function (_Component) {
       _this.focusInput();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "clearValue", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearValue", function () {
       var isMulti = _this.props.isMulti;
 
       _this.onChange(isMulti ? [] : null, {
@@ -1316,7 +1316,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "popValue", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "popValue", function () {
       var selectValue = _this.state.selectValue;
       var lastSelectedValue = selectValue[selectValue.length - 1];
       var newValue = selectValue.slice(0, selectValue.length - 1);
@@ -1334,26 +1334,26 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getOptionLabel", function (data) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getOptionLabel", function (data) {
       return _this.props.getOptionLabel(data);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getOptionValue", function (data) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getOptionValue", function (data) {
       return _this.props.getOptionValue(data);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getStyles", function (key, props) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getStyles", function (key, props) {
       var base = defaultStyles[key](props);
       base.boxSizing = 'border-box';
       var custom = _this.props.styles[key];
       return custom ? custom(base, props) : base;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getElementId", function (element) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getElementId", function (element) {
       return "".concat(_this.instancePrefix, "-").concat(element);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "getActiveDescendentId", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getActiveDescendentId", function () {
       var menuIsOpen = _this.props.menuIsOpen;
       var _this$state = _this.state,
           menuOptions = _this$state.menuOptions,
@@ -1364,7 +1364,7 @@ function (_Component) {
       return option && option.key;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "announceAriaLiveSelection", function (_ref2) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceAriaLiveSelection", function (_ref2) {
       var event = _ref2.event,
           context = _ref2.context;
 
@@ -1373,7 +1373,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "announceAriaLiveContext", function (_ref3) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "announceAriaLiveContext", function (_ref3) {
       var event = _ref3.event,
           context = _ref3.context;
 
@@ -1384,7 +1384,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onMenuMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuMouseDown", function (event) {
       if (event.button !== 0) {
         return;
       }
@@ -1395,11 +1395,11 @@ function (_Component) {
       _this.focusInput();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onMenuMouseMove", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuMouseMove", function (event) {
       _this.blockOptionHover = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onControlMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onControlMouseDown", function (event) {
       var openMenuOnClick = _this.props.openMenuOnClick;
 
       if (!_this.state.isFocused) {
@@ -1425,7 +1425,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDropdownIndicatorMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropdownIndicatorMouseDown", function (event) {
       // ignore mouse events that weren't triggered by the primary button
       if (event && event.type === 'mousedown' && event.button !== 0) {
         return;
@@ -1450,7 +1450,7 @@ function (_Component) {
       event.stopPropagation();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onClearIndicatorMouseDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClearIndicatorMouseDown", function (event) {
       // ignore mouse events that weren't triggered by the primary button
       if (event && event.type === 'mousedown' && event.button !== 0) {
         return;
@@ -1470,7 +1470,7 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onScroll", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onScroll", function (event) {
       if (typeof _this.props.closeMenuOnScroll === 'boolean') {
         if (event.target instanceof HTMLElement && __chunk_1.isDocumentElement(event.target)) {
           _this.props.onMenuClose();
@@ -1482,15 +1482,15 @@ function (_Component) {
       }
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompositionStart", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onCompositionStart", function () {
       _this.isComposing = true;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onCompositionEnd", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onCompositionEnd", function () {
       _this.isComposing = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchStart", function (_ref4) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchStart", function (_ref4) {
       var touches = _ref4.touches;
       var touch = touches.item(0);
 
@@ -1503,7 +1503,7 @@ function (_Component) {
       _this.userIsDragging = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchMove", function (_ref5) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchMove", function (_ref5) {
       var touches = _ref5.touches;
       var touch = touches.item(0);
 
@@ -1517,7 +1517,7 @@ function (_Component) {
       _this.userIsDragging = deltaX > moveThreshold || deltaY > moveThreshold;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onTouchEnd", function (event) {
       if (_this.userIsDragging) return; // close the menu if the user taps outside
       // we're checking on event.target here instead of event.currentTarget, because we want to assert information
       // on events on child elements, not the document (which we've attached this handler to).
@@ -1531,25 +1531,25 @@ function (_Component) {
       _this.initialTouchY = 0;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onControlTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onControlTouchEnd", function (event) {
       if (_this.userIsDragging) return;
 
       _this.onControlMouseDown(event);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onClearIndicatorTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onClearIndicatorTouchEnd", function (event) {
       if (_this.userIsDragging) return;
 
       _this.onClearIndicatorMouseDown(event);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onDropdownIndicatorTouchEnd", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onDropdownIndicatorTouchEnd", function (event) {
       if (_this.userIsDragging) return;
 
       _this.onDropdownIndicatorMouseDown(event);
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleInputChange", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleInputChange", function (event) {
       var inputValue = event.currentTarget.value;
       _this.inputIsHiddenAfterUpdate = false;
 
@@ -1560,7 +1560,7 @@ function (_Component) {
       _this.onMenuOpen();
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onInputFocus", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputFocus", function (event) {
       var _this$props5 = _this.props,
           isSearchable = _this$props5.isSearchable,
           isMulti = _this$props5.isMulti;
@@ -1590,7 +1590,7 @@ function (_Component) {
       _this.openAfterFocus = false;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onInputBlur", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onInputBlur", function (event) {
       if (_this.menuListRef && _this.menuListRef.contains(document.activeElement)) {
         _this.inputRef.focus();
 
@@ -1613,7 +1613,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onOptionHover", function (focusedOption) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onOptionHover", function (focusedOption) {
       if (_this.blockOptionHover || _this.state.focusedOption === focusedOption) {
         return;
       }
@@ -1623,7 +1623,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "shouldHideSelectedOptions", function () {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "shouldHideSelectedOptions", function () {
       var _this$props6 = _this.props,
           hideSelectedOptions = _this$props6.hideSelectedOptions,
           isMulti = _this$props6.isMulti;
@@ -1631,7 +1631,7 @@ function (_Component) {
       return hideSelectedOptions;
     });
 
-    _defineProperty(_assertThisInitialized(_this), "onKeyDown", function (event) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onKeyDown", function (event) {
       var _this$props7 = _this.props,
           isMulti = _this$props7.isMulti,
           backspaceRemovesValue = _this$props7.backspaceRemovesValue,
@@ -1811,7 +1811,7 @@ function (_Component) {
     });
 
     var value = _props.value;
-    _this.cacheComponents = memoizeOne(_this.cacheComponents, __chunk_2.exportedEqual).bind(_assertThisInitialized(_this));
+    _this.cacheComponents = memoizeOne(_this.cacheComponents, __chunk_2.exportedEqual).bind(_assertThisInitialized(_assertThisInitialized(_this)));
 
     _this.cacheComponents(_props.components);
 

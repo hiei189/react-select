@@ -12,21 +12,21 @@ var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/o
 
 require("@babel/runtime/helpers/toConsumableArray"), require("@babel/runtime/helpers/objectSpread");
 
-var _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React);
+var _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React);
 
 require("memoize-one"), require("@emotion/core"), require("react-dom"), require("prop-types"), 
 require("@babel/runtime/helpers/typeof"), require("raf");
 
 var __chunk_1 = require("../../dist/chunk-c9662232.cjs.prod.js");
 
-require("../../dist/chunk-1c9d6d4d.cjs.prod.js");
+require("../../dist/chunk-4c778abc.cjs.prod.js");
 
-var reactSelect = require("../../dist/base/dist/react-select-6872b6ea.cjs.prod.js");
+var reactSelect = require("../../dist/base/dist/react-select-b02e24b0.cjs.prod.js");
 
 require("@emotion/css"), require("@babel/runtime/helpers/taggedTemplateLiteral"), 
 require("react-input-autosize");
 
-var __chunk_3 = require("../../dist/chunk-d117fa1a.cjs.prod.js"), defaultProps = {
+var __chunk_3 = require("../../dist/chunk-185dfbdc.cjs.prod.js"), defaultProps = {
   cacheOptions: !1,
   defaultOptions: !1,
   filterOption: null
@@ -36,9 +36,11 @@ var __chunk_3 = require("../../dist/chunk-d117fa1a.cjs.prod.js"), defaultProps =
     function Async(props) {
       var _this;
       return _classCallCheck(this, Async), _this = _possibleConstructorReturn(this, _getPrototypeOf(Async).call(this)), 
-      _defineProperty(_assertThisInitialized(_this), "select", void 0), _defineProperty(_assertThisInitialized(_this), "lastRequest", void 0), 
-      _defineProperty(_assertThisInitialized(_this), "mounted", !1), _defineProperty(_assertThisInitialized(_this), "optionsCache", {}), 
-      _defineProperty(_assertThisInitialized(_this), "handleInputChange", function(newValue, actionMeta) {
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "select", void 0), 
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lastRequest", void 0), 
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "mounted", !1), 
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "optionsCache", {}), 
+      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleInputChange", function(newValue, actionMeta) {
         var _this$props = _this.props, cacheOptions = _this$props.cacheOptions, onInputChange = _this$props.onInputChange, inputValue = __chunk_1.handleInputChange(newValue, actionMeta, onInputChange);
         if (!inputValue) return delete _this.lastRequest, void _this.setState({
           inputValue: "",

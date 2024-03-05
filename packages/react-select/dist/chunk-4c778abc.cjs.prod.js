@@ -4,7 +4,7 @@ function _interopDefault(ex) {
   return ex && "object" == typeof ex && "default" in ex ? ex.default : ex;
 }
 
-var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), core = require("@emotion/core"), reactDom = require("react-dom"), PropTypes = _interopDefault(require("prop-types")), _typeof = _interopDefault(require("@babel/runtime/helpers/typeof")), __chunk_1 = require("./chunk-c9662232.cjs.prod.js"), _css = _interopDefault(require("@emotion/css")), _taggedTemplateLiteral = _interopDefault(require("@babel/runtime/helpers/taggedTemplateLiteral")), AutosizeInput = _interopDefault(require("react-input-autosize"));
+var _objectWithoutProperties = _interopDefault(require("@babel/runtime/helpers/objectWithoutProperties")), _extends = _interopDefault(require("@babel/runtime/helpers/extends")), _objectSpread = _interopDefault(require("@babel/runtime/helpers/objectSpread")), _classCallCheck = _interopDefault(require("@babel/runtime/helpers/classCallCheck")), _createClass = _interopDefault(require("@babel/runtime/helpers/createClass")), _possibleConstructorReturn = _interopDefault(require("@babel/runtime/helpers/possibleConstructorReturn")), _getPrototypeOf = _interopDefault(require("@babel/runtime/helpers/getPrototypeOf")), _inherits = _interopDefault(require("@babel/runtime/helpers/inherits")), _assertThisInitialized = _interopDefault(require("@babel/runtime/helpers/assertThisInitialized")), _defineProperty = _interopDefault(require("@babel/runtime/helpers/defineProperty")), React = require("react"), React__default = _interopDefault(React), core = require("@emotion/core"), reactDom = require("react-dom"), PropTypes = _interopDefault(require("prop-types")), _typeof = _interopDefault(require("@babel/runtime/helpers/typeof")), __chunk_1 = require("./chunk-c9662232.cjs.prod.js"), _css = _interopDefault(require("@emotion/css")), _taggedTemplateLiteral = _interopDefault(require("@babel/runtime/helpers/taggedTemplateLiteral")), AutosizeInput = _interopDefault(require("react-input-autosize"));
 
 function getMenuPlacement(_ref) {
   var maxHeight = _ref.maxHeight, menuEl = _ref.menuEl, minHeight = _ref.minHeight, placement = _ref.placement, shouldScroll = _ref.shouldScroll, isFixedPosition = _ref.isFixedPosition, spacing = _ref.theme.spacing, scrollParent = __chunk_1.getScrollParent(menuEl), defaultState = {
@@ -98,10 +98,10 @@ var coercePlacement = function(p) {
     _classCallCheck(this, MenuPlacer);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
     return _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(MenuPlacer)).call.apply(_getPrototypeOf2, [ this ].concat(args))), 
-    _defineProperty(_assertThisInitialized(_this), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
       maxHeight: _this.props.maxMenuHeight,
       placement: null
-    }), _defineProperty(_assertThisInitialized(_this), "getPlacement", function(ref) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getPlacement", function(ref) {
       var _this$props = _this.props, minMenuHeight = _this$props.minMenuHeight, maxMenuHeight = _this$props.maxMenuHeight, menuPlacement = _this$props.menuPlacement, menuPosition = _this$props.menuPosition, menuShouldScrollIntoView = _this$props.menuShouldScrollIntoView, theme = _this$props.theme, getPortalPlacement = _this.context.getPortalPlacement;
       if (ref) {
         var isFixedPosition = "fixed" === menuPosition, state = getMenuPlacement({
@@ -115,7 +115,7 @@ var coercePlacement = function(p) {
         });
         getPortalPlacement && getPortalPlacement(state), _this.setState(state);
       }
-    }), _defineProperty(_assertThisInitialized(_this), "getUpdatedProps", function() {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "getUpdatedProps", function() {
       var menuPlacement = _this.props.menuPlacement, placement = _this.state.placement || coercePlacement(menuPlacement);
       return _objectSpread({}, _this.props, {
         placement: placement,
@@ -220,9 +220,9 @@ var menuPortalCSS = function(_ref6) {
     _classCallCheck(this, MenuPortal);
     for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) args[_key2] = arguments[_key2];
     return _this2 = _possibleConstructorReturn(this, (_getPrototypeOf3 = _getPrototypeOf(MenuPortal)).call.apply(_getPrototypeOf3, [ this ].concat(args))), 
-    _defineProperty(_assertThisInitialized(_this2), "state", {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "state", {
       placement: null
-    }), _defineProperty(_assertThisInitialized(_this2), "getPortalPlacement", function(_ref7) {
+    }), _defineProperty(_assertThisInitialized(_assertThisInitialized(_this2)), "getPortalPlacement", function(_ref7) {
       var placement = _ref7.placement;
       placement !== coercePlacement(_this2.props.menuPlacement) && _this2.setState({
         placement: placement
